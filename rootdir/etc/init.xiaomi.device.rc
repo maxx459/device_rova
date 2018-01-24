@@ -37,6 +37,16 @@ on property:ro.vendor.xiaomi.device=riva
     setprop vendor.audio.mixer_xml.path /vendor/etc/riva_mixer_paths_qrd_sku2.xml
     restart vendor.audio-hal
 
+# Charger
+on property:ro.bootmode=charger && property:init.svc.vendor.qcom-post-boot=stopped
+    # Lock to lowest frequency on charger mode
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor powersave
+
+    # Offline all cores except cpu0
+    write /sys/devices/system/cpu/cpu1/online 0
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+
 # IR
 on init
     # LED

@@ -169,6 +169,12 @@ PRODUCT_PACKAGES += \
     RevampedFMRadio \
     libqcomfmjni:64
 
+# Filesystem
+PRODUCT_PACKAGES += \
+    e2fsck_ramdisk \
+    tune2fs_ramdisk \
+    resize2fs_ramdisk
+
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl:64 \

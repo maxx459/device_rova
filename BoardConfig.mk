@@ -162,6 +162,9 @@ TARGET_KERNEL_RECOVERY_CONFIG := \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/mi8937.config
 
+# DebugFS
+PRODUCT_SET_DEBUGFS_RESTRICTIONS ?= true
+
 # Media
 USE_DEVICE_SPECIFIC_MEDIA := true
 DEVICE_SPECIFIC_MEDIA_PATH := $(DEVICE_PATH)/qcom-caf/media

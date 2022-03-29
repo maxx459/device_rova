@@ -137,6 +137,7 @@ TARGET_KERNEL_CONFIG := \
     vendor/msm8937-perf_defconfig \
     vendor/msm8937-legacy.config \
     vendor/common.config \
+    vendor/debugfs.config \
     vendor/feature/android-12.config \
     vendor/feature/exfat.config \
     vendor/feature/kprobes.config \

@@ -91,6 +91,9 @@ PRODUCT_PACKAGES += \
     camera.msm8937
 
 PRODUCT_PACKAGES += \
+    vendor.qti.hardware.camera.device@1.0.vendor
+
+PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.2:64 \
     android.hardware.camera.device@3.3:64 \
     android.hardware.camera.device@3.4:64 \

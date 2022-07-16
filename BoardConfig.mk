@@ -171,6 +171,8 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/firmware_mnt:/firmware \
     /mnt/vendor/persist:/persist
 
+BOARD_USES_METADATA_PARTITION := true
+
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 

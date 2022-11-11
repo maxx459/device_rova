@@ -417,6 +417,9 @@ PRODUCT_PACKAGES += \
     libshims_ui \
     libwui
 
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-3.9.1-vendorcompat
+
 # Shipping level
 BOARD_SHIPPING_API_LEVEL := 30
 

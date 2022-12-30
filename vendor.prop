@@ -129,7 +129,6 @@ camera.display.lmax=1280x720
 camera.display.umax=1920x1080
 vendor.camera.lowpower.record.enable=1
 persist.camera.gyro.disable=0
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.hmdglobal.app.camera
 vendor.camera.hal1.packagelist=com.facebook.katana,com.facebook.orca,com.instagram.android,com.viber.voip,com.whatsapp
 vidc.enc.dcvs.extra-buff-count=2
 persist.vendor.camera.expose.logicId3=1

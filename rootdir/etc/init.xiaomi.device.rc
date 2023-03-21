@@ -1,3 +1,8 @@
+# RIL
+on boot
+    enable vendor.qcrild
+    enable vendor.qcrild2
+
 on property:vendor.subsys_state_notifier.modem.state=OFFLINE
     stop vendor.qcrild
     stop vendor.qcrild2

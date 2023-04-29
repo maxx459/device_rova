@@ -19,6 +19,9 @@ genfscon sysfs /devices/platform/soc/soc:gpio-leds/leds	u:object_r:sysfs_leds:s0
 # Kernelspace battery saver
 genfscon sysfs /module/battery_saver/parameters/enabled u:object_r:sysfs_battery_saver:s0
 
+# Mach
+genfscon sysfs /xiaomi-msm8937-mach	u:object_r:sysfs_mi8937_mach:s0
+
 # Power
 genfscon sysfs /devices/soc/soc:qcom,bcl/power_supply                u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/soc/msm-bcl-21/power_supply                  u:object_r:sysfs_batteryinfo:s0

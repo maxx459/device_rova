@@ -119,13 +119,18 @@ static const variant_info_t riva_info = {
 
 static void determine_device()
 {
-    std::string proc_cmdline;
-    android::base::ReadFileToString("/proc/cmdline", &proc_cmdline, true);
-    if (proc_cmdline.find("S88503") != proc_cmdline.npos) {
+    std::string codename;
+
+    android::base::ReadFileToString("/sys/xiaomi-msm8937-mach/codename", &codename, true);
+    if (codename.empty())
+        return;
+    codename.pop_back();
+
+    if (codename == "rolex") {
         set_variant_props(rolex_info);
         property_override("vendor.usb.product_string", "Xiaomi Redmi 4A");
         property_override("bluetooth.device.default_name", "Xiaomi Redmi 4A");
-    } else if (proc_cmdline.find("S88505") != proc_cmdline.npos) {
+    } else if (codename == "riva") {
         set_variant_props(riva_info);
         property_override("vendor.usb.product_string", "Xiaomi Redmi 5A");
         property_override("bluetooth.device.default_name", "Xiaomi Redmi 5A");

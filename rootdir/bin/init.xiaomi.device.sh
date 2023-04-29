@@ -1,9 +1,5 @@
 #!/vendor/bin/sh
 
-if [ -e /sys/class/leds/infrared/transmit ]; then
-	setprop ro.vendor.xiaomi.device rolex
-else
-	setprop ro.vendor.xiaomi.device riva
-fi
+setprop ro.vendor.xiaomi.device "$(cat /sys/xiaomi-msm8937-mach/codename)"
 
 exit 0

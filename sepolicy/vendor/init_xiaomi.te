@@ -15,9 +15,8 @@ set_prop(init_xiaomi, vendor_audio_prop)
 # Allow for transition from init domain to init_xiaomi
 init_daemon_domain(init_xiaomi)
 
-# LEDs
-allow init_xiaomi sysfs_leds:dir r_dir_perms;
-allow init_xiaomi sysfs_leds:file r_file_perms;
+allow init_xiaomi sysfs_mi8937_mach:dir r_dir_perms;
+allow init_xiaomi sysfs_mi8937_mach:file r_file_perms;
 
 # Shell script needs to execute /vendor/bin/sh
 allow init_xiaomi vendor_shell_exec:file rx_file_perms;

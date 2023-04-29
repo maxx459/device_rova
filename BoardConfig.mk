@@ -179,7 +179,7 @@ BOARD_USES_METADATA_PARTITION := true
 BOARD_USES_QCOM_HARDWARE := true
 
 # Power
-TARGET_TAP_TO_WAKE_NODE := "/proc/sys/dev/dt2w"
+TARGET_TAP_TO_WAKE_NODE := "/proc/sys/dev/xiaomi_msm8937_touchscreen/enable_dt2w"
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop

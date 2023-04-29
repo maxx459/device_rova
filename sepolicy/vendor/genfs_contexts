@@ -5,9 +5,6 @@ genfscon proc  /sys/kernel/boot_reason   u:object_r:proc_boot_reason:s0
 genfscon sysfs /camera_fusion_id_back  u:object_r:sysfs_camera_fusion_id:s0
 genfscon sysfs /camera_fusion_id_front u:object_r:sysfs_camera_fusion_id:s0
 
-# DT2W
-genfscon proc /sys/dev/dt2w u:object_r:dt2w_ctrl:s0
-
 # FDT
 genfscon sysfs /firmware/devicetree/base/model	u:object_r:fdt_model:s0
 
@@ -56,6 +53,7 @@ genfscon debugfs /rmt_storage	u:object_r:debugfs_rmt:s0
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.qcom,spmi:qcom,pm8937@0:qcom,pm8937_rtc/rtc u:object_r:sysfs_rtc:s0
 
 # Touchscreen
+genfscon proc  /sys/dev/xiaomi_msm8937_touchscreen			u:object_r:sysctl_mi8937_ts:s0
 genfscon sysfs /board_properties/virtualkeys.ft5346			u:object_r:sysfs_virtualkeys:s0
 genfscon sysfs /board_properties/virtualkeys.ft5x06_720p		u:object_r:sysfs_virtualkeys:s0
 genfscon proc /touchpanel                                           u:object_r:proc_touchpanel:s0

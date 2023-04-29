@@ -5,9 +5,6 @@ type proc_boot_reason, fs_type, proc_type;
 type sysfs_camera_fusion_id, fs_type, sysfs_type;
 type camera_socket, file_type, data_file_type;
 
-# DT2W
-type dt2w_ctrl, fs_type, proc_type;
-
 # FDT
 type fdt_model, fs_type, sysfs_type;
 
@@ -42,6 +39,7 @@ type sysfs_modem_subsys, fs_type, sysfs_type;
 
 # Touchscreen
 type proc_touchpanel, fs_type, sysfs_type, proc_type;
+type sysctl_mi8937_ts, fs_type, proc_type;
 
 # XiaomiParts
 type sysfs_shgain, sysfs_type, fs_type;

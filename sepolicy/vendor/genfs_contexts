@@ -29,6 +29,9 @@ genfscon sysfs /devices/soc/qpnp-typec-9/power_supply                  u:object_
 genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:vadc@3100 u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/soc:usb_power_supply/power_supply/usb		u:object_r:sysfs_usb_supply:s0
 
+# Power - Misc
+genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:bcl@4200/power_supply/fg_adc	u:object_r:sysfs_battery_supply:s0
+
 # Power - rolex
 genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0057/power_supply/battery	u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/7af5000.i2c/i2c-5/5-0062/power_supply/bms		u:object_r:sysfs_battery_supply:s0

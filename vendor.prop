@@ -175,9 +175,6 @@ ro.crypto.volume.metadata.method=dm-default-key
 ro.crypto.volume.filenames_mode=aes-256-cts
 ro.crypto.volume.options=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized
 
-# FRP
-ro.frp.pst=/dev/block/bootdevice/by-name/config
-
 # FUSE
 persist.sys.fuse.passthrough.enable=true
 

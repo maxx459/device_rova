@@ -150,7 +150,6 @@ TARGET_KERNEL_CONFIG := \
     vendor/xiaomi/feature/exfat.config \
     vendor/xiaomi/feature/kprobes.config \
     vendor/xiaomi/feature/lmkd.config \
-    vendor/xiaomi/feature/uclamp.config \
     vendor/xiaomi/feature/wireguard.config
 TARGET_KERNEL_VERSION := 4.19
 TARGET_KERNEL_ADDITIONAL_FLAGS := \

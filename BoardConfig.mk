@@ -143,14 +143,14 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/rova
 TARGET_KERNEL_CONFIG := \
     vendor/msm8937-perf_defconfig \
     vendor/msm8937-legacy.config \
-    vendor/xiaomi/common.config \
+    vendor/common.config \
+    vendor/feature/android-12.config \
+    vendor/feature/exfat.config \
+    vendor/feature/kprobes.config \
+    vendor/feature/lmkd.config \
+    vendor/feature/wireguard.config \
     vendor/xiaomi/msm8937/common.config \
-    vendor/xiaomi/msm8937/mi8937.config \
-    vendor/xiaomi/feature/android-12.config \
-    vendor/xiaomi/feature/exfat.config \
-    vendor/xiaomi/feature/kprobes.config \
-    vendor/xiaomi/feature/lmkd.config \
-    vendor/xiaomi/feature/wireguard.config
+    vendor/xiaomi/msm8937/mi8937.config
 TARGET_KERNEL_VERSION := 4.19
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     LLVM=1

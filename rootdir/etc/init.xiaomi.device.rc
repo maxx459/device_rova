@@ -33,16 +33,20 @@ on property:ro.vendor.xiaomi.device=riva
     restart vendor.audio-hal
 
 # IR
-on property:ro.vendor.xiaomi.device=rolex
+on init
+    # LED
     chown system system /sys/class/leds/infrared/transmit
     chown system system /sys/class/leds/infrared/brightness
+    # lirc
+    chown system system /dev/lirc0
+    # spidev
+    chown system system /dev/spidev7.1
+
+on property:ro.vendor.xiaomi.device=rolex
     setprop ro.hardware.consumerir led
-    restart vendor.ir-hal-1-0
 
 on property:ro.vendor.xiaomi.device=riva
-    chown system system /dev/spidev7.1
     setprop ro.hardware.consumerir spidev
-    restart vendor.ir-hal-1-0
 
 # GPS
 on property:persist.sys.xtra-daemon.enabled=*

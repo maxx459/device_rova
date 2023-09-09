@@ -147,7 +147,7 @@ TARGET_KERNEL_CONFIG := \
     vendor/feature/lmkd.config \
     vendor/feature/wireguard.config \
     vendor/xiaomi/msm8937/common.config \
-    vendor/xiaomi/msm8937/mi8937.config
+    vendor/xiaomi/msm8937/mi8917.config
 ifneq ($(shell grep CONFIG_KSU_STATIC_HOOKS $(TARGET_KERNEL_SOURCE)/techpack/KernelSU/kernel/ksu.c || true),)
 TARGET_KERNEL_CONFIG += \
     vendor/feature/ksu_static_hooks.config
@@ -165,7 +165,7 @@ TARGET_KERNEL_RECOVERY_CONFIG := \
     vendor/feature/no-camera-stack.config \
     vendor/feature/no-wlan-driver.config \
     vendor/xiaomi/msm8937/common.config \
-    vendor/xiaomi/msm8937/mi8937.config
+    vendor/xiaomi/msm8937/mi8917.config
 
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS ?= true

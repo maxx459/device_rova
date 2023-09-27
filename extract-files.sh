@@ -65,6 +65,12 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
+function patchelf_add_needed() {
+    if ! "${PATCHELF}" --print-needed "${2}" | grep -q "${1}"; then
+        "${PATCHELF}" --add-needed "${1}" "${2}"
+    fi
+}
+
 function blob_fixup() {
     case "${1}" in
         product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml \
@@ -72,9 +78,7 @@ function blob_fixup() {
             sed -i 's|version="2.0"|version="1.0"|g' "${2}"
             ;;
         system_ext/lib64/lib-imscamera.so)
-            for LIBSHIM_IMSVIDEOCODEC in $(grep -L "libshim_imscamera.so" "${2}"); do
-                "${PATCHELF}" --add-needed "libshim_imscamera.so" "${2}"
-            done
+            patchelf_add_needed "libshim_imscamera.so" "${2}"
             ;;
         vendor/lib/libmmsw_platform.so|vendor/lib/libmmsw_detail_enhancement.so)
             "${PATCHELF}" --remove-needed "libbinder.so" "${2}"
@@ -109,9 +113,7 @@ function blob_fixup() {
             ;;
         vendor/lib/libmmcamera_ppeiscore.so)
             sed -i 's|libgui.so|libwui.so|g' "${2}"
-            if ! "${PATCHELF}" --print-needed "${2}" | grep "libshims_ui.so" >/dev/null; then
-                "${PATCHELF}" --add-needed "libshims_ui.so" "${2}"
-            fi
+            patchelf_add_needed "libshims_ui.so" "${2}"
             ;;
         vendor/lib/libmpbase.so)
             "${PATCHELF}" --replace-needed "libandroid.so" "libshims_android.so" "${2}"

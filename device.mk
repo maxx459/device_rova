@@ -99,7 +99,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4:64 \
     android.hardware.camera.provider@2.5:64 \
     android.hardware.camera.provider@2.6:64 \
-    libstdc++.vendor
+    libstdc++_vendor
 
 # Cgroup Abstraction Layer
 PRODUCT_COPY_FILES += \

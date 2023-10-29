@@ -144,6 +144,10 @@ TARGET_KERNEL_CONFIG := \
     vendor/feature/wireguard.config \
     vendor/xiaomi/msm8937/common.config \
     vendor/xiaomi/msm8937/mi8937.config
+ifneq ($(shell grep CONFIG_KSU_STATIC_HOOKS $(TARGET_KERNEL_SOURCE)/techpack/KernelSU/kernel/ksu.c || true),)
+TARGET_KERNEL_CONFIG += \
+    vendor/feature/ksu_static_hooks.config
+endif
 TARGET_KERNEL_VERSION := 4.19
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     LLVM=1

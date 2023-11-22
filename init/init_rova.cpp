@@ -29,6 +29,7 @@
 
 #include <android-base/file.h>
 #include <cstdlib>
+#include <fstab/fstab.h>
 #include <fstream>
 #include <string.h>
 #include <sys/sysinfo.h>
@@ -139,8 +140,16 @@ static void determine_device()
     }
 }
 
+static void enable_gatekeeper_uid_offset() {
+    std::string boot_device = *android::fs_mgr::GetBootDevices().begin();
+    if (boot_device == "soc/7864900.sdhci") {
+        property_override("ro.gsid.image_running", "1");
+    }
+}
+
 void vendor_load_properties() {
     determine_device();
+    enable_gatekeeper_uid_offset();
     set_bootloader_prop();
     set_dalvik_heap_size();
     set_avoid_gfxaccel_config();

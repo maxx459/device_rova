@@ -21,7 +21,7 @@ xiaomi_msm8937_init_cc_library_static {
     name: "libinit_rova",
     recovery_available: true,
     srcs: ["init_rova.cpp"],
-    shared_libs: ["libbase"],
+    shared_libs: ["libbase", "libfs_mgr"],
     include_dirs: [
         "system/libbase/include",
         "system/core/init"

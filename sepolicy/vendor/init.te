@@ -28,6 +28,9 @@ get_prop(init, vendor_xiaomi_prop)
 # SoC info
 r_dir_file(init, sysfs_socinfo)
 
+# SDHCI
+allow init sysfs_kernel_sdhci_msm:file w_file_perms;
+
 # zRAM Writeback
 allow init per_boot_file:file ioctl;
 allowxperm init per_boot_file:file ioctl { F2FS_IOC_SET_PIN_FILE };

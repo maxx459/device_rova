@@ -94,6 +94,11 @@ on property:ro.vendor.xiaomi.device=riva
     mount none /vendor/etc/sensors/riva_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
     enable vendor-sensor-sh
 
+# SDHCI
+on early-fs
+    write /sys/kernel/sdhci_msm/add_host 1
+    wait /dev/block/platform/soc/7824900.sdhci/by-name/modem
+
 on property:sys.boot_completed=1
     restart time_daemon
 

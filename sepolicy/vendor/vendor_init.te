@@ -21,6 +21,7 @@ allow vendor_init {
     proc_sched
     proc_dirty
     proc_dirty_ratio
+    sysfs_kernel_sdhci_msm
 }:file w_file_perms;
 
 set_prop(vendor_init, vendor_power_prop)

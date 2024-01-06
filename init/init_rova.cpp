@@ -37,6 +37,7 @@
 #include <android-base/properties.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
+#include <fstream>
 
 #include "vendor_init.h"
 #include "property_service.h"
@@ -98,6 +99,7 @@ void set_avoid_gfxaccel_config();
 void force_adb_root();
 #endif
 void set_ro_build_prop(const std::string &prop, const std::string &value, bool product = false);
+void set_bootloader_prop(void);
 
 static const variant_info_t rolex_info = {
     .brand = "Xiaomi",
@@ -139,6 +141,7 @@ static void determine_device()
 
 void vendor_load_properties() {
     determine_device();
+    set_bootloader_prop();
     set_dalvik_heap_size();
     set_avoid_gfxaccel_config();
 #ifdef FORCE_ADB_ROOT
@@ -228,4 +231,24 @@ void set_variant_props(const variant_info_t variant) {
     set_ro_build_prop("fingerprint", variant.build_fingerprint);
     property_override("ro.bootimage.build.fingerprint", variant.build_fingerprint.c_str());
     property_override("ro.build.description", variant.build_description.c_str());
+}
+
+void set_bootloader_prop(void) {
+    std::string file = "/sys/devices/soc0/images";
+    std::ifstream fp(file);
+    if (!fp) {
+        return;
+    }
+
+    std::string line;
+    std::size_t found;
+    while (std::getline(fp, line)) {
+        // "  CRM:  00:BOOT.BF.3.3-00214"
+        found = line.rfind("BOOT.");
+        if (found != line.npos) {
+            // "BOOT.BF.3.3-00214"
+            property_override("ro.bootloader", line.substr(found).c_str());
+            return;
+        }
+    }
 }

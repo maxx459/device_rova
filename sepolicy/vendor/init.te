@@ -28,6 +28,9 @@ allow init sysfs_leds:lnk_file r_file_perms;
 get_prop(init, vendor_subsys_state_notifier_prop)
 get_prop(init, vendor_xiaomi_prop)
 
+# SoC info
+r_dir_file(init, sysfs_socinfo)
+
 # zRAM Writeback
 allow init per_boot_file:file ioctl;
 allowxperm init per_boot_file:file ioctl { F2FS_IOC_SET_PIN_FILE };

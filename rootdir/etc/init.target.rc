@@ -142,7 +142,7 @@ service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
 
 on charger
     setprop sys.usb.configfs 1
-    start qcom-post-boot
+    start vendor.qcom-post-boot
     setprop persist.sys.usb.config mass_storage
     start vendor.hvdcp_opti
 

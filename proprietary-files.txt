@@ -9,8 +9,8 @@
 # ugg Package version: ugg-user 7.1.2 N2G47H V11.0.2.0.NDKMIXM release-keys
 # daisy Package version: daisy-user 10 QKQ1.191002.002 V11.0.21.0.QDLMIXM release-keys
 # santoni Package version: santoni-user 7.1.2 N2G47H V11.0.2.0.NAMMIXM release-keys
-# spes Package version: miui_SPESNGlobal_V13.0.2.0.SGKMIXM_586a606056_12.0
 # sweet Package version: Redmi/sweet_global/sweet:12/SKQ1.210908.001/V13.0.3.0.SKFMIXM:user/release-keys
+# umi Package version: umi-user 13 RKQ1.211001.001 V14.0.5.0.TJBMIXM release-keys
 
 # ACDB - from riva (Oreo)
 vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
@@ -827,10 +827,9 @@ vendor/lib64/libtinyxml2_1.so
 vendor/firmware/a300_pfp.fw
 vendor/firmware/a300_pm4.fw
 
-# HotwordEnrollment - from spes
--product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk
--product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk
-product/etc/permissions/privapp-permissions-google-hotword.xml
+# HotwordEnrollment - from umi
+-product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND.apk
+-product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
 

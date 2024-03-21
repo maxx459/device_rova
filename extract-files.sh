@@ -124,6 +124,12 @@ function blob_fixup() {
         vendor/lib64/libwvhidl.so|vendor/lib64/mediadrm/libwvdrmengine.so)
             sed -i 's|libprotobuf-cpp-lite-3.9.1.so|libprotobuf-cpp-full-3.9.1.so|g' "${2}"
             ;;
+        # RIL
+        vendor/lib64/libril-qc-hal-qmi.so)
+            for v in 1.{0..2}; do
+                sed -i "s|android.hardware.radio.config@${v}.so|android.hardware.radio.c_shim@${v}.so|g" "${2}"
+            done
+            ;;
     esac
 
     # For all ELF files

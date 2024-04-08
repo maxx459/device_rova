@@ -1,0 +1,42 @@
+plugins {
+    id 'com.android.library'
+}
+
+def SettingsLibUtils = '../fwb/packages/SettingsLib/Utils'
+
+android {
+    namespace 'com.android.settingslib.utils'
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = ["${SettingsLibUtils}/res"]
+            java.srcDirs = ["${SettingsLibUtils}/src"]
+        }
+    }
+}
+
+addCompileOnlyJar('android-33.jar')
+
+dependencies {
+    implementation libs.annotation
+}

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name" translatable="false">"7SIM"</string>
+    <string name="app_description">"Control SIM cards based on your schedule"</string>
+
+    <string name="airplane_mode_enabled">"Airplane mode is on"</string>
+    <string name="sim_state_change_request_failed">"SIM request failed (code <xliff:g name="errCode" example="2">%1$d</xliff:g>)"</string>
+    <string name="restart_to_apply">"You have to restart the application to apply changes"</string>
+    <string name="sim_missing">"SIM card missing"</string>
+
+    <string name="disclaimer_banner_content">"Download 7SIM exclusively from the official GitHub page. Files from unknown sources can be malicious!"</string>
+
+    <string name="preference_list_title">"Preferences"</string>
+
+    <string name="preference_list_show_app_icon_title">"Show app icon"</string>
+    <string name="preference_list_show_app_icon_summary">"Display application icon in the launcher"</string>
+
+    <string name="sim_list_title">"SIM"</string>
+    <string name="sim_no_inserted_msg">"No SIM cards inserted"</string>
+
+    <string name="about_category_title">"About 7SIM app"</string>
+
+    <string name="updates_title">"Updates"</string>
+    <string name="updates_summary">"Check and download latest update"</string>
+    <string name="releases_url" translatable="false">"https://github.com/iusmac/7SIM/releases"</string>
+
+    <string name="build_version_title">"Build version"</string>
+
+    <string name="help_title">"Help &amp; feedback"</string>
+    <string name="help_summary">"Found a bug? Ran into an issue?"</string>
+    <string name="help_url" translatable="false">"https://github.com/iusmac/7SIM#help--feedback"</string>
+
+    <string name="license_title">"Open source licenses"</string>
+    <string name="license_summary">"License details for open source software"</string>
+
+    <string name="foreground_notification_title">"Working in the background…"</string>
+    <string name="foreground_notification_channel_name">"Background tasks"</string>
+    <string name="foreground_notification_channel_description">"Android requires displaying an ongoing notification while the app is active in the background. You can safely hide this channel."</string>
+    <string name="notification_important_channel_name">"High importance"</string>
+
+    <string name="scheduler_day_of_week_separator">",\u0020"</string>
+
+    <string name="scheduler_toolbar_reset">"Reset"</string>
+    <string name="scheduler_reset_dialog_message">"This operation cannot be undone.\n\nWould you like to continue?"</string>
+    <string name="scheduler_switch_use_title">"Use schedule"</string>
+    <string name="scheduler_days_of_week_title">"Days"</string>
+    <string name="scheduler_days_of_week_none">"None"</string>
+    <string name="scheduler_days_of_week_all">"Every day"</string>
+    <string name="scheduler_start_time_title">"Start time"</string>
+    <string name="scheduler_end_time_title">"End time"</string>
+    <string name="scheduler_start_time_custom_summary">"Will turn on automatically <![CDATA[<b><xliff:g name="date_time" example="today, 6 AM">%1$s</xliff:g></b>]]>"</string>
+    <string name="scheduler_end_time_custom_summary">"Will turn off automatically <![CDATA[<b><xliff:g name="date_time" example="today, 10 PM">%1$s</xliff:g></b>]]>"</string>
+    <string name="scheduler_start_time_none_summary">"Will <b>never</b> turn on automatically"</string>
+    <string name="scheduler_end_time_none_summary">"Will <b>never</b> turn off automatically"</string>
+    <string name="scheduler_no_schedule_summary">"No schedule"</string>
+
+    <string name="background_restricted_title">"Background usage required"</string>
+    <string name="background_restricted_notification_text">"This app has been prevented from running in the background.\nTouch here to allow background usage."</string>
+    <string name="background_restricted_banner_content">"This app has been prevented from running in the background. Prioritize app to continue background usage."</string>
+    <string name="background_restricted_button_prioritize_app">"Prioritize app"</string>
+
+    <string name="foreground_notification_paused_in_background_title">"Paused in background"</string>
+    <string name="foreground_notification_call_in_progress_text">"Call in progress…"</string>
+
+    <string name="sim_list_key" translatable="false">"sim_list"</string>
+    <string name="sim_list_background_restricted_banner_key" translatable="false">"sim_list_background_restricted_banner"</string>
+    <string name="sim_list_disclaimer_banner_key" translatable="false">"sim_list_disclaimer_banner"</string>
+    <string name="sim_list_no_sim_key" translatable="false">"sim_list_no_sim"</string>
+    <string name="sim_list_updates_key" translatable="false">"sim_list_updates"</string>
+    <string name="sim_list_version_key" translatable="false">"sim_list_version"</string>
+    <string name="sim_list_help_key" translatable="false">"sim_list_help"</string>
+    <string name="sim_list_license_key" translatable="false">"sim_list_license"</string>
+    <string name="preference_list_show_app_icon_key" translatable="false">"show_launcher_icon"</string>
+    <string name="scheduler_enabled_key" translatable="false">"scheduler_enabled"</string>
+    <string name="scheduler_days_of_week_key" translatable="false">"scheduler_days_of_week"</string>
+    <string name="scheduler_start_time_key" translatable="false">"scheduler_start_time"</string>
+    <string name="scheduler_end_time_key" translatable="false">"scheduler_end_time"</string>
+</resources>

@@ -143,8 +143,7 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/rova
 TARGET_KERNEL_CONFIG := rova_defconfig
 TARGET_KERNEL_VERSION := 4.19
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
-    LLVM=1 LLVM_IAS=1 \
-    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+    LLVM=1
 ifneq ($(wildcard $(shell pwd)/prebuilts/clang/host/$(HOST_PREBUILT_TAG)/clang-latest),)
     TARGET_KERNEL_CLANG_VERSION := latest
 endif

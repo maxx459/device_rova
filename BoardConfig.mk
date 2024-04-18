@@ -144,9 +144,6 @@ TARGET_KERNEL_CONFIG := rova_defconfig
 TARGET_KERNEL_VERSION := 4.19
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     LLVM=1
-ifneq ($(wildcard $(shell pwd)/prebuilts/clang/host/$(HOST_PREBUILT_TAG)/clang-latest),)
-    TARGET_KERNEL_CLANG_VERSION := latest
-endif
 
 # Media
 USE_DEVICE_SPECIFIC_MEDIA := true

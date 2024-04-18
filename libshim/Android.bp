@@ -13,16 +13,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-cc_library_shared {
-    name: "libshims_binder",
-    shared_libs: ["libbinder", "libutils"],
-    srcs: [
-        "libbinder/IServiceManager.cpp",
-        "libbinder/PermissionCache.cpp",
-    ],
-    vendor: true
-}
-
 // libandroid
 cc_library_shared {
     name: "libshims_android",

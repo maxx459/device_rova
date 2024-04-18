@@ -405,7 +405,6 @@ PRODUCT_PACKAGES += \
 # Shims
 PRODUCT_PACKAGES += \
     libshims_android \
-    libshims_binder \
     libshims_ui \
     libwui
 

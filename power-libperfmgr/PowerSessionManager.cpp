@@ -33,6 +33,7 @@ namespace power {
 namespace impl {
 namespace pixel {
 
+using ::android::perfmgr::AdpfConfig;
 using ::android::perfmgr::HintManager;
 
 namespace {
@@ -96,16 +97,6 @@ void PowerSessionManager::updateHintBoost(const std::string &boost, int32_t dura
     ATRACE_CALL();
     ALOGV("PowerSessionManager::updateHintBoost: boost: %s, durationMs: %d", boost.c_str(),
           durationMs);
-    if (boost.compare("DISPLAY_UPDATE_IMMINENT") == 0) {
-        PowerHintMonitor::getInstance()->getLooper()->sendMessage(mWakeupHandler, NULL);
-    }
-}
-
-void PowerSessionManager::wakeSessions() {
-    std::lock_guard<std::mutex> guard(mLock);
-    for (PowerHintSession *s : mSessions) {
-        s->wakeup();
-    }
 }
 
 int PowerSessionManager::getDisplayRefreshRate() {
@@ -199,10 +190,6 @@ void PowerSessionManager::handleMessage(const Message &) {
     } else {
         enableSystemTopAppBoost();
     }
-}
-
-void PowerSessionManager::WakeupHandler::handleMessage(const Message &) {
-    PowerSessionManager::getInstance()->wakeSessions();
 }
 
 void PowerSessionManager::dumpToFd(int fd) {

@@ -56,7 +56,6 @@ genfscon sysfs /devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-00/200f000.q
 
 # Touchscreen
 genfscon proc  /sys/dev/xiaomi_msm8937_touchscreen			u:object_r:sysctl_mi8937_ts:s0
-genfscon proc /touchpanel                                           u:object_r:proc_touchpanel:s0
 
 # Vibrator
 genfscon sysfs /devices/platform/soc/soc:vibrator_gpio/leds/vibrator	u:object_r:sysfs_vibrator:s0

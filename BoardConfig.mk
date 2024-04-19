@@ -148,6 +148,16 @@ TARGET_KERNEL_VERSION := 4.19
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     LLVM=1
 
+TARGET_KERNEL_RECOVERY_CONFIG := \
+    vendor/msm8937-perf_defconfig \
+    vendor/common.config \
+    vendor/feature/exfat.config \
+    vendor/feature/ntfs.config \
+    vendor/feature/no-camera-stack.config \
+    vendor/feature/no-wlan-driver.config \
+    vendor/xiaomi/msm8937/common.config \
+    vendor/xiaomi/msm8937/mi8937.config
+
 # Media
 USE_DEVICE_SPECIFIC_MEDIA := true
 DEVICE_SPECIFIC_MEDIA_PATH := $(DEVICE_PATH)/qcom-caf/media

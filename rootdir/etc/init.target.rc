@@ -150,10 +150,6 @@ on boot
     start rmt_storage
     insmod /system/lib/modules/adsprpc.ko
 
-    # Kernelspace battery saver
-    chown system system /sys/module/battery_saver/parameters/enabled
-    chmod 0660 /sys/module/battery_saver/parameters/enabled
-
 # access permission for wlan
     chown system system /mnt/vendor/persist/WCNSS_qcom_wlan_nv.bin
 

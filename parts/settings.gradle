@@ -6,6 +6,10 @@ pluginManagement {
     }
 }
 
+plugins {
+    id 'com.android.settings' version '8.1.4'
+}
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
@@ -18,8 +22,16 @@ rootProject.name = 'XiaomiParts'
 
 include ':app'
 include ':SettingsLib:CollapsingToolbarBaseActivity'
+include ':SettingsLib:Color'
 include ':SettingsLib:FooterPreference'
 include ':SettingsLib:IllustrationPreference'
 include ':SettingsLib:MainSwitchPreference'
 include ':SettingsLib:SettingsTheme'
 include ':SettingsLib:Utils'
+
+android {
+    compileSdk 34
+    minSdk 34
+    // TODO: b/317358817 com.android.settings plugin doesn't recognize targetSdk
+    // targetSdk 34
+}

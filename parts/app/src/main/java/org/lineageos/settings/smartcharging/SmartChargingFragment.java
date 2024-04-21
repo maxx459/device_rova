@@ -22,16 +22,16 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Switch;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
-import androidx.preference.TwoStatePreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.settingslib.widget.MainSwitchPreference;
-import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import dagger.Lazy;
 import dagger.hilt.android.AndroidEntryPoint;
@@ -46,7 +46,7 @@ import static org.lineageos.settings.BuildConfig.DEBUG;
 
 @AndroidEntryPoint(PreferenceFragmentCompat.class)
 public class SmartChargingFragment extends Hilt_SmartChargingFragment implements
-        Preference.OnPreferenceChangeListener, OnMainSwitchChangeListener,
+        Preference.OnPreferenceChangeListener, OnCheckedChangeListener,
         SharedPreferences.OnSharedPreferenceChangeListener {
 
     private final String TAG = getClass().getName();
@@ -62,7 +62,7 @@ public class SmartChargingFragment extends Hilt_SmartChargingFragment implements
     private SeekBarPreference mSeekBarChargingResumePreference;
     private SeekBarPreference mSeekBarChargingTempPreference;
     private ListPreference mChargingCurrentMaxListPref;
-    private TwoStatePreference mResetStatsPreference;
+    private SwitchPreferenceCompat mResetStatsPreference;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -98,7 +98,7 @@ public class SmartChargingFragment extends Hilt_SmartChargingFragment implements
     }
 
     @Override
-    public void onSwitchChanged(Switch switchView, boolean isChecked) {
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         if (isChecked) {
             mSmartChargingManagerLazy.get().enable();
         } else {

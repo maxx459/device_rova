@@ -22,7 +22,7 @@ android {
         }
     }
 
-    lintOptions {
+    lint {
         checkReleaseBuilds false
         abortOnError false
     }
@@ -39,8 +39,8 @@ android {
 
     sourceSets {
         main {
-            res.srcDirs = ['res']
-            java.srcDirs = ['src']
+            res.srcDirs = ['../fwb/packages/SettingsLib/Utils/res']
+            java.srcDirs = ['../fwb/packages/SettingsLib/Utils/src']
         }
     }
 }

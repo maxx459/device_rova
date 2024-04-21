@@ -1,0 +1,17 @@
+/fwb
+!/.gitignore
+!/fetch.sh
+/CollapsingToolbarBaseActivity/*
+!/CollapsingToolbarBaseActivity/build.gradle
+/Color/*
+!/Color/build.gradle
+/FooterPreference/*
+!/FooterPreference/build.gradle
+/IllustrationPreference/*
+!/IllustrationPreference/build.gradle
+/MainSwitchPreference/*
+!/MainSwitchPreference/build.gradle
+/SettingsTheme/*
+!/SettingsTheme/build.gradle
+/Utils/*
+!/Utils/build.gradle

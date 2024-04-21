@@ -3,10 +3,10 @@ plugins {
 }
 
 android {
-    namespace 'com.android.settingslib.collapsingtoolbar'
+    namespace 'com.android.settingslib.color'
 
     defaultConfig {
-        minSdk 29
+        minSdk 28
         targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -31,18 +31,7 @@ android {
 
     sourceSets {
         main {
-            res.srcDirs = ['../fwb/packages/SettingsLib/CollapsingToolbarBaseActivity/res']
-            java.srcDirs = ['../fwb/packages/SettingsLib/CollapsingToolbarBaseActivity/src']
+            res.srcDirs = ['../fwb/packages/SettingsLib/Color/res']
         }
     }
-}
-
-dependencies {
-    implementation libs.annotation
-    implementation libs.appcompat
-    implementation libs.coordinatorlayout
-    implementation libs.material
-    implementation libs.preference
-    implementation project(':SettingsLib:SettingsTheme')
-    implementation project(':SettingsLib:Utils')
 }

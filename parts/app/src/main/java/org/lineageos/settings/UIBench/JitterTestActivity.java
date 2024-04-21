@@ -47,25 +47,18 @@ public class JitterTestActivity extends Activity {
     private Handler mUpdateHandler = new Handler(Looper.myLooper()) {
         @Override
         public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case R.id.jitter_mma:
-                    mJitterReport.setText((CharSequence) msg.obj);
-                    break;
-                case R.id.totalish_mma:
-                    mMostlyTotalFrameTimeReport.setText((CharSequence) msg.obj);
-                    break;
-                case R.id.ui_frametime_mma:
-                    mUiFrameTimeReport.setText((CharSequence) msg.obj);
-                    break;
-                case R.id.rt_frametime_mma:
-                    mRenderThreadTimeReport.setText((CharSequence) msg.obj);
-                    break;
-                case R.id.total_mma:
-                    mTotalFrameTimeReport.setText((CharSequence) msg.obj);
-                    break;
-                case R.id.graph:
-                    mGraph.addJitterSample(msg.arg1, msg.arg2);
-                    break;
+            if (msg.what == R.id.jitter_mma) {
+                mJitterReport.setText((CharSequence) msg.obj);
+            } else if (msg.what == R.id.totalish_mma) {
+                mMostlyTotalFrameTimeReport.setText((CharSequence) msg.obj);
+            } else if (msg.what == R.id.ui_frametime_mma) {
+                mUiFrameTimeReport.setText((CharSequence) msg.obj);
+            } else if (msg.what == R.id.rt_frametime_mma) {
+                mRenderThreadTimeReport.setText((CharSequence) msg.obj);
+            } else if (msg.what == R.id.total_mma) {
+                mTotalFrameTimeReport.setText((CharSequence) msg.obj);
+            } else if (msg.what == R.id.graph) {
+                mGraph.addJitterSample(msg.arg1, msg.arg2);
             }
         }
     };

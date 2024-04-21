@@ -27,7 +27,7 @@ import android.util.Log;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import org.lineageos.settings.R;
 
@@ -41,13 +41,13 @@ public class ClearSpeakerFragment extends PreferenceFragmentCompat implements
 
     private Handler mHandler = new Handler(Looper.getMainLooper());
     private MediaPlayer mMediaPlayer;
-    private SwitchPreference mClearSpeakerPref;
+    private SwitchPreferenceCompat mClearSpeakerPref;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.clear_speaker_settings);
 
-        mClearSpeakerPref = (SwitchPreference) findPreference(getString(
+        mClearSpeakerPref = (SwitchPreferenceCompat) findPreference(getString(
                     R.string.clear_speaker_key_switch));
         mClearSpeakerPref.setOnPreferenceChangeListener(this);
     }

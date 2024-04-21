@@ -20,7 +20,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
 
 public class ClearSpeakerActivity extends CollapsingToolbarBaseActivity {
 
@@ -29,7 +28,8 @@ public class ClearSpeakerActivity extends CollapsingToolbarBaseActivity {
         super.onCreate(savedInstanceState);
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().add(R.id.content_frame,
+            getSupportFragmentManager().beginTransaction().add(
+                    com.android.settingslib.collapsingtoolbar.R.id.content_frame,
                     new ClearSpeakerFragment()).commit();
         }
     }

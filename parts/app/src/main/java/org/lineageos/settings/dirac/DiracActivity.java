@@ -19,7 +19,6 @@ package org.lineageos.settings.dirac;
 import android.os.Bundle;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -33,7 +32,8 @@ public class DiracActivity extends Hilt_DiracActivity {
         super.onCreate(savedInstanceState);
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().add(R.id.content_frame,
+            getSupportFragmentManager().beginTransaction().add(
+                    com.android.settingslib.collapsingtoolbar.R.id.content_frame,
                     new DiracSettingsFragment(), TAG_DIRAC).commit();
         }
     }

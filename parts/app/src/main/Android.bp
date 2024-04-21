@@ -11,6 +11,7 @@ android_app {
         "java/**/*.java",
         "gen/**/*.java",
     ],
+    use_resource_processor: true,
     resource_dirs: ["res"],
     certificate: "platform",
     platform_apis: true,
@@ -22,13 +23,15 @@ android_app {
         "androidx.core_core",
         "androidx.preference_preference",
         "SettingsLibCollapsingToolbarBaseActivity",
+        "SettingsLibColor",
+        "SettingsLibFooterPreference",
         "SettingsLibIllustrationPreference",
         "SettingsLibMainSwitchPreference",
-        "SettingsLibFooterPreference",
         "hilt_android",
     ],
 
     optimize: {
+        optimize: true,
         proguard_flags_files: ["proguard.flags"],
     },
 }

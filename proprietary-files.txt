@@ -707,7 +707,7 @@ vendor/lib64/librpmb.so
 # Gatekeeper
 vendor/lib64/hw/gatekeeper.msm8937.so
 
-# Google Settings Intelligence prebuilt
+# Google Settings Intelligence prebuilt - from redfin UP1A.231005.007
 -product/etc/default-permissions/default-permissions_com.google.android.settings.intelligence.xml
 -product/etc/permissions/privapp_whitelist_com.google.android.settings.intelligence.xml
 -product/priv-app/SettingsIntelligenceGooglePrebuilt/SettingsIntelligenceGooglePrebuilt.apk

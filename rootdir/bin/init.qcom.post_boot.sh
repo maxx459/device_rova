@@ -99,7 +99,7 @@ function 8917_sched_dcvs_eas()
         #governor settings
         echo 1 > /sys/devices/system/cpu/cpu0/online
         echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-        echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
+        echo 2500 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
         echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
         #set the hispeed_freq
         echo 1094400 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq

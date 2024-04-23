@@ -213,7 +213,7 @@
     },
     {
       "Name": "CPUUpRateLimit",
-      "Path": "/sys/devices/system/cpu/cpufreq/schedutil/up_rate_limit_us",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us",
       "Values": [
         "2500",
         "25000"

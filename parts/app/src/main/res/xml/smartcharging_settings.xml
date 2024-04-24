@@ -61,7 +61,7 @@
         android:entryValues="@array/smartcharging_current_values"
         android:defaultValue="@string/smart_charging_current_default_value"
         android:title="@string/smart_charging_current_max"
-        android:summary="%s" />
+        app:useSimpleSummaryProvider="true" />
 
     <SwitchPreferenceCompat
         android:key="@string/smart_charging_key_reset_stats"

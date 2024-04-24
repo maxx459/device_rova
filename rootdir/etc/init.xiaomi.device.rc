@@ -71,6 +71,9 @@ on property:persist.sys.xtra-daemon.enabled=*
 on boot
     chown root root /sys/devices/virtual/graphics/fb0/cabc
     chmod 0000 /sys/devices/virtual/graphics/fb0/cabc
+    chown root root /sys/devices/virtual/graphics/fb0/hbm
+    chmod 0000 /sys/devices/virtual/graphics/fb0/hbm
+
 
 # Netmgrd
 on post-fs

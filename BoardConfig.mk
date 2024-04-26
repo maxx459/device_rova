@@ -159,6 +159,7 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
 
 TARGET_KERNEL_RECOVERY_CONFIG := \
     vendor/msm8937-perf_defconfig \
+    vendor/msm8937-legacy.config \
     vendor/common.config \
     vendor/feature/exfat.config \
     vendor/feature/ntfs.config \

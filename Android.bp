@@ -12,7 +12,7 @@ android_app {
     system_ext_specific: true,
 
     min_sdk_version: "29",
-    target_sdk_version: "33",
+    target_sdk_version: "34",
 
     static_libs: [
         "SettingsLibBannerMessagePreference",
@@ -34,17 +34,19 @@ android_app {
         "androidx.room_room-compiler-plugin",
     ],
 
+    use_resource_processor: true,
+
     optimize: {
         optimize: true,
         proguard_flags_files: ["proguard.flags"],
     },
 
     aaptflags: [
-        "--version-name", "1.0.2-beta", // x-release-please-version
+        "--version-name", "1.1.0-beta", // x-release-please-version
         "--version-code",
         "1" + // x-release-please-major
-        "0" + // x-release-please-minor
-        "2",  // x-release-please-patch
+        "1" + // x-release-please-minor
+        "0",  // x-release-please-patch
     ],
 
     required: [

@@ -15,6 +15,17 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from rova device
 $(call inherit-product, device/xiaomi/rova/device.mk)
 
+# RisingOS flags
+RISING_CHIPSET="MSM8937"
+RISING_MAINTAINER="@maxx459"
+RISING_PACKAGE_TYPE := "VANILLA_AOSP"
+TARGET_ENABLE_BLUR := false
+PRODUCT_NO_CAMERA := false
+WITH_GMS := false
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RISING_CHIPSET="MSM8937" \
+    RISING_MAINTAINER="@maxx459"
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := rova
 PRODUCT_NAME := lineage_rova

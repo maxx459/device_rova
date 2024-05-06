@@ -1153,9 +1153,6 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 
-# RIL (QCRILD) - from FP3
-vendor/lib64/libril-qc-hal-qmi.so
-
 # Telephony (ATFWD)
 -system_ext/app/atfwd/atfwd.apk
 

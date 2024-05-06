@@ -395,12 +395,6 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
-PRODUCT_PACKAGES += \
-    android.hardware.radio.config@1.1-service.wrapper.xiaomi_mithorium \
-    android.hardware.radio.c_shim@1.0.so \
-    android.hardware.radio.c_shim@1.1.so \
-    android.hardware.radio.c_shim@1.2.so
-
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.qcom \

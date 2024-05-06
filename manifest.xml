@@ -49,9 +49,9 @@
         <fqname>@1.0::ISensors/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.radio.config</name>
+        <name>lineage.hardware.radio.config</name>
         <transport>hwbinder</transport>
-        <fqname>@1.1::IRadioConfig/default</fqname>
+        <fqname>@1.0::IRadioConfig/default</fqname>
     </hal>
     <hal format="hidl">
         <name>com.qualcomm.qti.dpm.api</name>
@@ -67,11 +67,6 @@
         <name>com.qualcomm.qti.uceservice</name>
         <transport>hwbinder</transport>
         <fqname>@2.3::IUceService/com.qualcomm.qti.uceservice</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>mithorm.hardware.radio.oldcfg</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IRadioOldcfg/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.display.color</name>

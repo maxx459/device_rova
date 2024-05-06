@@ -1,2 +1,1 @@
 vendor.qti.hardware.slmadapter::ISlmAdapter                   u:object_r:vendor_hal_slmadapter_hwservice:s0
-mithorm.hardware.radio.oldcfg::IRadioOldcfg	u:object_r:vendor_hal_radio_oldcfg_hwservice:s0

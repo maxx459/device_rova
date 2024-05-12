@@ -82,17 +82,37 @@ public final class RamPlusManager {
     void setMode(final RamPlusMode mode) {
         if (DEBUG) Log.d(TAG, String.format("setMode(mode=%s).", mode));
 
+        final int modeIdx = mode.ordinal();
+
+        setSwapFreeLowPercentage(mResources.getIntArray(
+                R.array.ramplus_swap_free_low_percentages)[modeIdx]);
+        setLowMemMinOomScore(mResources.getIntArray(
+                    R.array.ramplus_lowmem_min_oom_score_values)[modeIdx]);
+
+        mSharedPrefs.edit().putString(mResources.getString(R.string.ramplus_key_mode),
+                mode.name()).apply();
+    }
+
+    private void setSwapFreeLowPercentage(final int value) {
+        if (DEBUG) Log.d(TAG, String.format("setSwapFreeLowPercentage(value=%d).", value));
+
         final String prop = mResources.getString(R.string.ramplus_prop_swap_free_low_percentage);
         final int oldPercentage = PartsUtils.getintProp(prop, -1);
-        final int newPercentage = mResources.getIntArray(
-                R.array.ramplus_swap_free_low_percentages)[mode.ordinal()];
 
         // Set value only if it differs from the current one, otherwise we will pointlessly trigger
         // LMK reinit
-        if (oldPercentage != newPercentage) {
-            PartsUtils.setintProp(prop, newPercentage);
+        if (oldPercentage != value) {
+            PartsUtils.setintProp(prop, value);
         }
-        mSharedPrefs.edit().putString(mResources.getString(R.string.ramplus_key_mode),
-                mode.name()).apply();
+    }
+
+    private void setLowMemMinOomScore(final int value) {
+        if (DEBUG) Log.d(TAG, String.format("setLowMemMinOomScore(value=%d).", value));
+
+        final String prop = mResources.getString(R.string.ramplus_prop_lowmem_min_oom_score);
+        final int oldValue = PartsUtils.getintProp(prop, -1);
+        if (oldValue != value) {
+            PartsUtils.setintProp(prop, value);
+        }
     }
 }

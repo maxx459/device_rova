@@ -15,6 +15,14 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from rova device
 $(call inherit-product, device/xiaomi/rova/device.mk)
 
+# Device config
+TARGET_EXCLUDES_AUDIOFX := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+# Maintainer
+ALPHA_BUILD_TYPE := Official
+ALPHA_MAINTAINER := maxx459
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := rova
 PRODUCT_NAME := lineage_rova

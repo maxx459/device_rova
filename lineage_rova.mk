@@ -18,7 +18,6 @@ $(call inherit-product, device/xiaomi/rova/device.mk)
 # RisingOS flags
 RISING_CHIPSET="MSM8937"
 RISING_MAINTAINER="@maxx459"
-RISING_PACKAGE_TYPE := "VANILLA_AOSP"
 TARGET_ENABLE_BLUR := false
 PRODUCT_NO_CAMERA := false
 WITH_GMS := false

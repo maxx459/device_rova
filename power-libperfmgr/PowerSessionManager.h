@@ -50,6 +50,10 @@ class PowerSessionManager : public MessageHandler {
     // monitoring session status
     void addPowerSession(PowerHintSession *session);
     void removePowerSession(PowerHintSession *session);
+    void addThreadsFromPowerSession(PowerHintSession *session);
+    void addThreadsFromPowerSessionLocked(PowerHintSession *session);
+    void removeThreadsFromPowerSession(PowerHintSession *session);
+    void removeThreadsFromPowerSessionLocked(PowerHintSession *session);
     void setUclampMin(PowerHintSession *session, int min);
     void setUclampMinLocked(PowerHintSession *session, int min);
     void handleMessage(const Message &message) override;
@@ -68,7 +72,6 @@ class PowerSessionManager : public MessageHandler {
     const std::string kDisableBoostHintName;
 
     std::unordered_set<PowerHintSession *> mSessions;  // protected by mLock
-    std::unordered_map<int, int> mTidRefCountMap;      // protected by mLock
     std::unordered_map<int, std::unordered_set<PowerHintSession *>> mTidSessionListMap;
     bool mActive;  // protected by mLock
     /**

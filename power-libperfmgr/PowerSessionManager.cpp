@@ -72,7 +72,11 @@ static void set_uclamp_min(int tid, int min) {
 
     int ret = sched_setattr(tid, &attr, 0);
     if (ret) {
-        ALOGW("sched_setattr failed for thread %d, err=%d", tid, errno);
+        if (errno == ESRCH) {
+            ALOGV("sched_setattr failed for thread %d, err=%d", tid, errno);
+        } else {
+            ALOGW("sched_setattr failed for thread %d, err=%d", tid, errno);
+        }
     }
 }
 }  // namespace
@@ -105,42 +109,46 @@ int PowerSessionManager::getDisplayRefreshRate() {
 
 void PowerSessionManager::addPowerSession(PowerHintSession *session) {
     std::lock_guard<std::mutex> guard(mLock);
-    for (auto t : session->getTidList()) {
-        mTidSessionListMap[t].insert(session);
-        if (mTidRefCountMap.find(t) == mTidRefCountMap.end()) {
-            if (!SetTaskProfiles(t, {"ResetUclampGrp"})) {
-                ALOGW("Failed to set ResetUclampGrp task profile for tid:%d", t);
-            } else {
-                mTidRefCountMap[t] = 1;
-            }
-            continue;
-        }
-        if (mTidRefCountMap[t] <= 0) {
-            ALOGE("Error! Unexpected zero/negative RefCount:%d for tid:%d", mTidRefCountMap[t], t);
-            continue;
-        }
-        mTidRefCountMap[t]++;
-    }
     mSessions.insert(session);
+    addThreadsFromPowerSessionLocked(session);
 }
 
 void PowerSessionManager::removePowerSession(PowerHintSession *session) {
     std::lock_guard<std::mutex> guard(mLock);
+    mSessions.erase(session);
+    removeThreadsFromPowerSessionLocked(session);
+}
+
+void PowerSessionManager::addThreadsFromPowerSession(PowerHintSession *session) {
+    std::lock_guard<std::mutex> guard(mLock);
+    addThreadsFromPowerSessionLocked(session);
+}
+
+void PowerSessionManager::addThreadsFromPowerSessionLocked(PowerHintSession *session) {
     for (auto t : session->getTidList()) {
-        if (mTidRefCountMap.find(t) == mTidRefCountMap.end()) {
-            ALOGE("Unexpected Error! Failed to look up tid:%d in TidRefCountMap", t);
-            continue;
+        if (mTidSessionListMap[t].empty()) {
+            if (!SetTaskProfiles(t, {"ResetUclampGrp"})) {
+                ALOGW("Failed to set ResetUclampGrp task profile for tid:%d", t);
+            }
         }
-        mTidSessionListMap[t].erase(session);
-        mTidRefCountMap[t]--;
-        if (mTidRefCountMap[t] <= 0) {
+        mTidSessionListMap[t].insert(session);
+    }
+}
+
+void PowerSessionManager::removeThreadsFromPowerSession(PowerHintSession *session) {
+    std::lock_guard<std::mutex> guard(mLock);
+    removeThreadsFromPowerSessionLocked(session);
+}
+
+void PowerSessionManager::removeThreadsFromPowerSessionLocked(PowerHintSession *session) {
+    for (auto t : session->getTidList()) {
+        size_t cnt = mTidSessionListMap[t].erase(session);
+        if (cnt != 0 && mTidSessionListMap[t].empty()) {
             if (!SetTaskProfiles(t, {"NoResetUclampGrp"})) {
                 ALOGW("Failed to set NoResetUclampGrp task profile for tid:%d", t);
             }
-            mTidRefCountMap.erase(t);
         }
     }
-    mSessions.erase(session);
 }
 
 void PowerSessionManager::setUclampMin(PowerHintSession *session, int val) {

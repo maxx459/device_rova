@@ -135,9 +135,15 @@
 
     <!-- RAM+ -->
     <integer-array name="ramplus_swap_free_low_percentages">
-        <item>8</item> <!-- MODERATE -->
+        <item>3</item> <!-- MODERATE -->
         <item>1</item> <!-- SLIGHT -->
-        <item>12</item> <!-- EXTREME -->
+        <item>8</item> <!-- EXTREME -->
+    </integer-array>
+
+    <integer-array name="ramplus_lowmem_min_oom_score_values">
+        <item>965</item> <!-- MODERATE -->
+        <item>1001</item> <!-- SLIGHT -->
+        <item>701</item> <!-- EXTREME -->
     </integer-array>
 
     <integer-array name="ramplus_mode_icons">

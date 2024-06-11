@@ -16,7 +16,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, device/xiaomi/rova/device.mk)
 
 # Inifinity Flags
-INFINITY_MAINTAINER := "YourInput" (Default: Unknown)
+INFINITY_MAINTAINER := "@maxx459"
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := rova
